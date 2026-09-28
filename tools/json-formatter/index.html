@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON Formatter — Web Tools</title>
+  <link rel="stylesheet" href="../../assets/css/shared.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-title" href="../../index.html">Web Tools &amp; Learning Artifacts</a>
+      <nav class="site-nav">
+        <a href="../../index.html">&larr; Back to tools</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>🧾 JSON Formatter</h1>
+    <p>Paste JSON below, then beautify, minify, or validate it.</p>
+
+    <div class="tool-panel">
+      <div class="field">
+        <label for="json-input">Input</label>
+        <textarea id="json-input" placeholder='{"example": true}'></textarea>
+      </div>
+
+      <div class="button-row">
+        <button id="beautify-btn" type="button">Beautify</button>
+        <button id="minify-btn" type="button">Minify</button>
+        <button id="validate-btn" type="button" class="secondary">Validate</button>
+        <button id="copy-btn" type="button" class="secondary">Copy output</button>
+      </div>
+
+      <div id="status" class="status-message" role="status"></div>
+
+      <div class="field">
+        <label for="json-output">Output</label>
+        <textarea id="json-output" readonly placeholder="Result will appear here"></textarea>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

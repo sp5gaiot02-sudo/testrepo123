@@ -1,0 +1,262 @@
+:root {
+  --color-bg: #f7f7f9;
+  --color-surface: #ffffff;
+  --color-border: #e0e0e6;
+  --color-text: #1f2430;
+  --color-text-muted: #666a75;
+  --color-primary: #3b5bdb;
+  --color-primary-hover: #2f49ad;
+  --color-danger: #d64545;
+  --color-success: #2a9d5c;
+  --radius: 8px;
+  --max-width: 960px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+a {
+  color: var(--color-primary);
+}
+
+.site-header {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-header__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.site-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.site-nav a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+/* Tool card grid on the index page */
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.tool-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.tool-card:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.tool-card__icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.tool-card__name {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.tool-card__description {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+/* Shared tool page layout */
+.tool-panel {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  margin-top: 1rem;
+}
+
+.field {
+  margin-bottom: 1rem;
+}
+
+.field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+textarea,
+input[type="text"],
+input[type="color"],
+select {
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-bg);
+  color: var(--color-text);
+  width: 100%;
+}
+
+textarea {
+  min-height: 220px;
+  resize: vertical;
+  font-family: "SFMono-Regular", Consolas, Menlo, monospace;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+button {
+  font: inherit;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-primary);
+  background: var(--color-primary);
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+}
+
+button.secondary {
+  background: var(--color-surface);
+  color: var(--color-primary);
+}
+
+button.secondary:hover {
+  background: var(--color-bg);
+}
+
+.status-message {
+  font-weight: 600;
+  margin: 0.5rem 0;
+  min-height: 1.4em;
+}
+
+.status-message.error {
+  color: var(--color-danger);
+}
+
+.status-message.success {
+  color: var(--color-success);
+}
+
+/* Color palette generator */
+.scheme-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+.scheme-controls .field {
+  margin-bottom: 0;
+}
+
+.color-input-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.color-input-row input[type="color"] {
+  width: 3rem;
+  height: 2.4rem;
+  padding: 0.15rem;
+}
+
+.color-input-row input[type="text"] {
+  width: 8rem;
+}
+
+.palette {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.swatch {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--color-surface);
+  text-align: left;
+  font: inherit;
+  color: var(--color-text);
+  padding: 0;
+}
+
+.swatch__color {
+  height: 90px;
+}
+
+.swatch__info {
+  padding: 0.5rem 0.6rem;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.swatch__hex {
+  font-weight: 700;
+  font-family: "SFMono-Regular", Consolas, Menlo, monospace;
+}
+
+@media (max-width: 480px) {
+  .site-header__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
