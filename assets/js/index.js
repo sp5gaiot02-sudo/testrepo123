@@ -7,7 +7,7 @@
     card.href = tool.url;
 
     var icon = document.createElement("div");
-    icon.className = "tool-card__icon";
+    icon.className = "tool-card__icon-badge";
     icon.textContent = tool.emoji;
 
     var name = document.createElement("div");
